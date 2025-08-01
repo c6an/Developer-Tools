@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./popup3.css" />
+    <title>Observ</title>
+  </head>
+
+  <body>
+    <div style="background-color: white; margin: 15px; border-radius: 8px">
+      <div style="font-weight: bolder; font-size: 16px; padding: 17px">
+        Input Observer
+      </div>
+      <hr style="color: lightgray" />
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          padding-right: 21px;
+          padding-left: 21px;
+          padding-top: 18px;
+        "
+      >
+        <p>
+          <a
+            href="../popup3/popup3.html"
+            style="text-decoration: none; color: gray"
+            >←</a
+          >
+        </p>
+        <p>
+          <a
+            href="../popup/popup.html"
+            style="text-decoration: none; color: gray"
+            >→</a
+          >
+        </p>
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 12px;
+        "
+      >
+        <div id="url"><div>Target :</div></div>
+        <label>
+          <span id="toggle_status" style="color: gray">off</span>
+          <input id="observ" type="checkbox" />
+        </label>
+      </div>
+
+      <div id="alertFrame" style="padding: 0 20px 10px; margin-bottom: 10px; border-bottom: 1px solid #ddd"></div>
+
+      <div
+        id="diffFrame"
+        style="padding: 0 20px 20px; overflow-y: auto; max-height: 340px"
+      ></div>
+    </div>
+  </body>
+  <script src="../lib/diff.min.js"></script>
+  <script type="module" src="./popup3.js"></script>
+</html>

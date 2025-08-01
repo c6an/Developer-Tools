@@ -1,0 +1,312 @@
+/* 기본 리셋 및 배경 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* 컨테이너 */
+.raw-data-container {
+    background: #2d3748;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 헤더 */
+.header {
+    background: #f8f9fa;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.header-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+    background: #dee2e6;
+}
+
+/* 본문 */
+.content {
+    padding: 24px;
+}
+
+.payload-section {
+    margin-bottom: 32px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.tag.custom {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tag.vulnerable {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.payload-code {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 16px;
+    border-left: 4px solid #d32f2f;
+    margin-bottom: 8px;
+}
+
+.payload-description {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 정보 그리드 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* 원본 데이터 */
+.raw-data-section {
+    margin-bottom: 32px;
+    padding: 0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.raw-data-container {
+    background: #2d3748;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.raw-data-header {
+    background: #4a5568;
+    padding: 12px 16px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.raw-data-content {
+    padding: 16px;
+    margin: 0;
+    color: #e2e8f0;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+/* 분석 카드 */
+.analysis-section {
+    margin-bottom: 32px;
+}
+
+.analysis-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.analysis-card {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    background: white;
+}
+
+.analysis-card.critical {
+    border-left: 4px solid #d32f2f;
+}
+
+.analysis-card.warning {
+    border-left: 4px solid #ff9800;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.card-list {
+    list-style: none;
+}
+
+.card-list li {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.card-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #999;
+}
+
+/* 액션 버튼 */
+.actions {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+.btn.primary {
+    background: #495057;
+    color: white;
+    border-color: #495057;
+}
+
+.btn.primary:hover {
+    background: #343a40;
+    border-color: #343a40;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: #adb5bd;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.copy-btn:hover {
+    color: white;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 0;
+        width: calc(100% - 20px);
+    }
+
+    .info-grid,
+    .analysis-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}

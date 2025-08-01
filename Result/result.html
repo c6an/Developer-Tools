@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <meta name="hidden-input" content="3" />
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+<div class="container">
+    <!--제목-->
+    <div class="header">
+        <div>
+            <div class="header-title">XSS Filter Visualizer</div>
+            <div class="header-subtitle">보안 스캔 결과</div>
+        </div>
+        <div class="header-actions">
+            <button class="icon-btn" id="share">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92S19.61 16.08 18 16.08z"/>
+                </svg>
+            </button>
+            <button class="icon-btn" id="print">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+                </svg>
+            </button>
+            <button class="icon-btn" id="close">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="dashboard-section">
+            <div class="dashboard-title">스캔 결과 대시보드</div>
+            <div class="dashboard-subtitle">XSS 취약점 및 보안 설정 분석 결과를 확인하세요.</div>
+        </div>
+        <!--요약 상자-->
+        <div class="summary">
+            <div class="sum-box" id="total-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="mi-solid mi-pulse" viewBox="0 0 24 24">
+                <path d="m14 20.37-2.71-8.13-1.24-4.34-1.81 7.25-2.33-4.66-1.36 2.04c-.09.14-.25.22-.42.22H2.75c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.85l2.49-3.74 1.67 3.34L9.95 2.1l2.77 9.69L14 15.62l4-11.99 2.54 7.62h.71c.41 0 .75.34.75.75s-.34.75-.75.75h-1.43c-.22 0-.41-.14-.47-.34L18 8.37z"/>
+                </svg>
+                <div class="sum-value" id="total">0</div>  
+                <div class="sum-title">총 검사 항목</div>
+                <div class="sum-describe">지정한 파라미터에 대한 검사</div>
+            </div>
+
+            <div class="sum-box" id="vuln-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="mi-solid mi-pulse" viewBox="0 0 24 24">
+                <path d="m14 20.37-2.71-8.13-1.24-4.34-1.81 7.25-2.33-4.66-1.36 2.04c-.09.14-.25.22-.42.22H2.75c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.85l2.49-3.74 1.67 3.34L9.95 2.1l2.77 9.69L14 15.62l4-11.99 2.54 7.62h.71c.41 0 .75.34.75.75s-.34.75-.75.75h-1.43c-.22 0-.41-.14-.47-.34L18 8.37z"/>
+                </svg>
+                <div class="sum-value" id="vuln">0</div>  
+                <div class="sum-title">취약점 발견</div>
+                <div class="sum-describe">XSS 공격에 노출될 수 있는 보안 이슈</div>
+            </div>
+            <div class="sum-box" id="filter-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="mi-solid mi-pulse" viewBox="0 0 24 24">
+                <path d="m14 20.37-2.71-8.13-1.24-4.34-1.81 7.25-2.33-4.66-1.36 2.04c-.09.14-.25.22-.42.22H2.75c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h.85l2.49-3.74 1.67 3.34L9.95 2.1l2.77 9.69L14 15.62l4-11.99 2.54 7.62h.71c.41 0 .75.34.75.75s-.34.75-.75.75h-1.43c-.22 0-.41-.14-.47-.34L18 8.37z"/>
+                </svg>
+                <div class="sum-value">0</div>  
+                <div class="sum-title">필터링된 항목</div>
+                <div class="sum-describe">필터링되거나 차단된 요소</div>
+            </div>
+        </div>  
+        
+
+        <!--분석 결과-->
+        <div class="result-analysis-box" id="analyze">
+            <div class="analysis-header">
+                <div class="analysis-title">상세 분석 결과</div>
+                <div class="param" id="target_param">Parameter: q</div>
+                <div class="search-box">
+                    <input class="search-txt" id="search" type="text" placeholder="search">
+                    <button class="clear-btn" id="clear" type="button">✕</button>
+                </div>
+                
+            </div>
+
+            <div class="no-result" id="no-result-message">
+                검색 결과가 없습니다.
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script type="module" src="result.js"></script>
+</body>
+</html>

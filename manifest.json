@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "XSS Filter Visualizer",
+  "description": "Reflected XSS 필터링 여부를 자동 검사하고 결과를 시각화합니다.",
+  "version": "0.2.1",
+  "action": {
+    "default_title": "XSS Filter Visualizer",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "tabs", "scripting", "activeTab", "notifications"],
+  "host_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup3/xss_new.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup3/content_detector_new.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

